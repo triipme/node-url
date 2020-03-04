@@ -154,7 +154,7 @@ Url.prototype.parse = function(url, parseQueryString, slashesDenoteHost) {
   var proto = protocolPattern.exec(rest);
   if (proto) {
     proto = proto[0];
-    var lowerProto = proto.toLowerCase();
+    var lowerProto = proto;
     this.protocol = lowerProto;
     rest = rest.substr(proto.length);
   }
@@ -284,7 +284,7 @@ Url.prototype.parse = function(url, parseQueryString, slashesDenoteHost) {
       this.hostname = '';
     } else {
       // hostnames are always lower case.
-      this.hostname = this.hostname.toLowerCase();
+      this.hostname = this.hostname;
     }
 
     if (!ipv6Hostname) {
